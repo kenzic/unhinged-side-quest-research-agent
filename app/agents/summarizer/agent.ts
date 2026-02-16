@@ -80,7 +80,7 @@ Keep it focused and factual. Do not include speculation or unverified claims.`;
  * Summarizer agent instance.
  *
  * CONFIGURATION:
- * - Model: GPT-5 for nuanced synthesis of verified information
+ * - Model: GPT-5-mini for nuanced synthesis of verified information
  * - Tools: None (focused on synthesis, not discovery)
  * - Steps: Maximum 5 (sufficient for analysis and writing)
  *
@@ -98,7 +98,7 @@ Keep it focused and factual. Do not include speculation or unverified claims.`;
  * @type {ToolLoopAgent}
  */
 const summarizerAgent = new ToolLoopAgent({
-  model: openai("gpt-5"), // Advanced reasoning for synthesis
+  model: openai("gpt-5-mini"), // Advanced reasoning for synthesis
   instructions: summarizerInstructions,
   tools: {}, // No external tools - synthesizes only provided information
   stopWhen: stepCountIs(5), // 5 steps sufficient for analysis + writing

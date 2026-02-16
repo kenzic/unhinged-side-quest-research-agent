@@ -80,7 +80,7 @@ Be playful, curious, and excited about these discoveries. Make it fun to read!`;
  * Random tangents agent instance.
  *
  * CONFIGURATION:
- * - Model: GPT-5 for creative connection-finding and engaging writing
+ * - Model: GPT-5-mini for creative connection-finding and engaging writing
  * - Tools: Tavily search for discovering tangential information
  * - Steps: Maximum 5 (enough for 1-2 searches + writing)
  *
@@ -97,7 +97,7 @@ Be playful, curious, and excited about these discoveries. Make it fun to read!`;
  * @type {ToolLoopAgent}
  */
 const randomTangentsAgent = new ToolLoopAgent({
-  model: openai("gpt-5"), // Creative reasoning for finding connections
+  model: openai("gpt-5-mini"), // Creative reasoning for finding connections
   instructions: randomTangentsInstructions,
   tools: {
     /**

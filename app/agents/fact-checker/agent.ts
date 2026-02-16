@@ -81,7 +81,7 @@ Be thorough but concise. Focus on factual accuracy.`;
  * Fact-checker agent instance.
  *
  * CONFIGURATION:
- * - Model: GPT-5 for nuanced reasoning about claim validity
+ * - Model: GPT-5-mini for nuanced reasoning about claim validity
  * - Tools: None (focused on analysis of provided information)
  * - Steps: Maximum 5 (sufficient for claim extraction and categorization)
  *
@@ -93,7 +93,7 @@ Be thorough but concise. Focus on factual accuracy.`;
  * @type {ToolLoopAgent}
  */
 const factCheckerAgent = new ToolLoopAgent({
-  model: openai("gpt-5"), // Advanced reasoning for claim verification
+  model: openai("gpt-5-mini"), // Advanced reasoning for claim verification
   instructions: factCheckerInstructions,
   tools: {}, // No external tools - analyzes only provided information
   stopWhen: stepCountIs(5), // 5 steps sufficient for verification process

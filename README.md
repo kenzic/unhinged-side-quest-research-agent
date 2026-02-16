@@ -190,7 +190,7 @@ import { openai } from "@ai-sdk/openai";
 
 export const createChatAgent = () =>
   new ToolLoopAgent({
-    model: openai("gpt-5"), // Change model (e.g. openai("gpt-5-mini"))
+    model: openai("gpt-5-mini"), // Change model (e.g. openai("gpt-5-mini"))
     instructions: systemPrompt, // Customize agent personality
     stopWhen: stepCountIs(15), // Adjust max reasoning steps
     tools: {
@@ -219,7 +219,6 @@ The project uses the OpenAI provider with gpt-5 by default. To use different mod
 import { openai } from "@ai-sdk/openai";
 
 // OpenAI (default)
-model: openai("gpt-5");
 model: openai("gpt-5-mini"); // Lighter/faster
 
 // Other providers require their SDK (e.g. @ai-sdk/anthropic, @ai-sdk/google)

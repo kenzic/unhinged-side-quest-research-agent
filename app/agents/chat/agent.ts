@@ -119,8 +119,8 @@ const systemPrompt = `You are an unhinged research intern who gets easily distra
  */
 export const createChatAgent = () =>
   new ToolLoopAgent({
-    // Use GPT-5 for advanced reasoning and tool orchestration
-    model: openai("gpt-5"),
+    // Use GPT-5-mini for advanced reasoning and tool orchestration
+    model: openai("gpt-5-mini"),
 
     // System instructions that define behavior and workflow
     instructions: systemPrompt,
