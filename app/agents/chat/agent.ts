@@ -126,40 +126,5 @@ export const createChatAgent = () =>
     instructions: systemPrompt,
 
     // Tools available to the agent during execution
-    tools: {
-      // Tavily search with advanced depth for comprehensive research
-      tavilySearch: tavilySearch({
-        searchDepth: "advanced", // Deep crawling for thorough content extraction
-        maxResults: 5, // Get diverse sources for cross-referencing
-      }),
-
-      // Specialized tools for workflow orchestration
-      findRandomTangents: findRandomTangentsTool, // Tangent discovery sub-agent
-      factCheck: factCheckTool, // Fact verification sub-agent
-      summarize: summarizeTool, // Summary generation sub-agent
-    },
-
-    /**
-     * Stop condition: Maximum 15 steps
-     * This limit accommodates the full research workflow:
-     * - 5-7 searches (initial + tangent + follow-up)
-     * - 3 tool calls (findRandomTangents, factCheck, summarize)
-     * - 5-7 reasoning and formatting steps
-     */
-    stopWhen: stepCountIs(15),
-
-    /**
-     * Step completion callback for monitoring and analytics
-     * Logs each step's details including:
-     * - Tool calls made
-     * - Token usage
-     * - Execution time
-     * - Intermediate results
-     *
-     * @param {object} options - Step completion details
-     */
-    onStepFinish: async (options) => {
-      // Per-call tracking (e.g., for billing, debugging, or analytics)
-      console.log(JSON.stringify(options, null, 2));
-    },
+    tools: {},
   });
